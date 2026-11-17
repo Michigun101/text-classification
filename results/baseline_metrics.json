@@ -1,0 +1,15 @@
+{
+  "model": "TF-IDF (1-2 grams) + LogisticRegression",
+  "n_train": 1599,
+  "n_test": 400,
+  "accuracy": 0.8425,
+  "macro_f1": 0.8398,
+  "weighted_f1": 0.8398,
+  "per_class_f1": {
+    "World": 0.8515,
+    "Sports": 0.9238,
+    "Business": 0.7667,
+    "Sci/Tech": 0.8173
+  },
+  "random_state": 42
+}

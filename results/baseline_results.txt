@@ -1,0 +1,24 @@
+=== BASELINE: TF-IDF + LogisticRegression ===
+
+train: 1599, test: 400
+Accuracy:    0.8425
+Macro F1:    0.8398
+Weighted F1: 0.8398
+
+              precision    recall  f1-score   support
+
+       World     0.8431    0.8600    0.8515       100
+      Sports     0.8818    0.9700    0.9238       100
+    Business     0.8625    0.6900    0.7667       100
+    Sci/Tech     0.7870    0.8500    0.8173       100
+
+    accuracy                         0.8425       400
+   macro avg     0.8436    0.8425    0.8398       400
+weighted avg     0.8436    0.8425    0.8398       400
+
+Confusion matrix :
+          World  Sports  Business  Sci/Tech
+World        86       8         3         3
+Sports        2      97         0         1
+Business     11       1        69        19
+Sci/Tech      3       4         8        85

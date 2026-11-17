@@ -1,0 +1,76 @@
+ 1. Ошибки 
+Всего test: 400, ошибок: 59 (14.8%), accuracy: 0.8525
+
+Ошибки по истинному классу:
+  Business   28
+  Sci/Tech   15
+  World      10
+  Sports     6
+
+2. Confusion matrix 
+          World  Sports  Business  Sci/Tech
+World        90       6         3         1
+Sports        3      94         2         1
+Business     11       2        72        15
+Sci/Tech      3       3         9        85
+Сохранено: results/confusion_matrix.png
+
+Самые частые ошибки (истина -> предсказано):
+  Business -> Sci/Tech: 15
+  Business -> World: 11
+  Sci/Tech -> Business: 9
+  World -> Sports: 6
+  World -> Business: 3
+  Sci/Tech -> Sports: 3
+
+3. Примеры ошибок
+
+--- Business -> Sci/Tech (15 ошибок) ---
+[уверенность 0.37] model train maker lionel files for bankruptcy protection lionel llc, a maker of model trains for more than 100 years, has filed for bankruptcy protection after a us jury found the company used designs for toy locomotives
+    слова за «Sci/Tech»: [('model', 0.17), ('protection', 0.13), ('company', 0.11), ('used', 0.05), ('files', 0.04)]
+[уверенность 0.43] cingular-at amp;t wireless deal gets justice dept. ok washington -- antitrust regulators at the justice department have given their blessing to the acquisition by cingular wireless of at amp;t wireless services.
+    слова за «Sci/Tech»: [('wireless', 0.29), ('services', 0.09), ('justice', 0.08), ('amp wireless', 0.08), ('justice department', 0.04)]
+[уверенность 0.31] michaels splits, doesn't fray the arts and crafts retailer doesn't need to bend over backward to impress investors.
+    слова за «Sci/Tech»: [('doesn', 0.13), ('need', 0.12)]
+[уверенность 0.33] philip morris challenges $10.1 billion consumer fraud ruling philip morris usa challenged a $10.1 billion consumer fraud ruling wednesday, telling the illinois supreme court that its "light" cigarettes performed as adver
+    слова за «Sci/Tech»: [('fraud', 0.15), ('ruling', 0.12), ('10', 0.11), ('supreme', 0.03), ('light', 0.03)]
+
+--- Business -> World (11 ошибок) ---
+[уверенность 0.38] chile asks pinochet to explain $8 million us bank accounts chile 's former dictator augusto pinochet reportedly is the target of an investigation in his homeland probing up us bank accounts controlled by the ex-president
+    слова за «World»: [('president', 0.27), ('pinochet', 0.11), ('accounts', 0.07), ('ex', 0.07), ('dictator', 0.04)]
+[уверенность 0.34] fed 's mcteer sole candidate to head texas a amp;m dallas federal reserve president robert mcteer was named on wednesday as the sole candidate to become chancellor of the texas a amp;m university system and his office sa
+    слова за «World»: [('president', 0.28), ('said', 0.09), ('head', 0.08), ('candidate', 0.06), ('texas', 0.05)]
+[уверенность 0.83] other comments (forbes.com) forbes.com - governments react differently to acts of terror. president bush took the war against terror on the offensive, to afghanistan and iraq. in spain, the newly elected government chose
+    слова за «World»: [('iraq', 0.47), ('president', 0.37), ('political', 0.14), ('war', 0.14), ('troops', 0.14)]
+[уверенность 0.44] russia may repay up to $10bln in foreign debt in 2005 finance ... russia may allocate up to $10 billion from its stabilization fund to repay foreign debt, finance minister aleksei kudrin told reporters at a press confere
+    слова за «World»: [('minister', 0.25), ('foreign', 0.17), ('russia', 0.13), ('press', 0.09), ('monday', 0.07)]
+
+--- Sci/Tech -> Business (9 ошибок) ---
+[уверенность 0.34] report asserts kazaa makes the rules setting aside sharman networks ' objections, an australian judge accepted on friday an affidavit with potentially damaging assertions about kazaa 's handling of copyrighted material.
+    слова за «Business»: [('australian', 0.12), ('friday', 0.1), ('report', 0.1), ('networks', 0.1), ('rules', 0.07)]
+[уверенность 0.50] drop in flat-panel prices to end, au optronics says au optronics corp ( ), the world 's third-largest maker of flat-panel displays used in computers and televisions, expects the decline in screen prices that began earlie
+    слова за «Business»: [('prices', 0.37), ('maker', 0.14), ('corp', 0.13), ('demand', 0.12), ('largest', 0.11)]
+[уверенность 0.67] bioveris files delayed annual report bioveris corp. filed its delayed annual report with the securities and exchange commission monday, only days before a scheduled hearing by the nasdaq stock market on whether to delist
+    слова за «Business»: [('stock', 0.19), ('company', 0.16), ('earnings', 0.15), ('corp', 0.12), ('report', 0.12)]
+[уверенность 0.30] india can be among worlds top five by 2010 the success of indias broadband policy will depend on the government clearly articulating the strategic role it expects broadband to play in delivering socio-economic gains to a
+    слова за «Business»: [('economic', 0.13), ('government', 0.11), ('expects', 0.09), ('policy', 0.06), ('gains', 0.06)]
+
+4. Failure cases 
+Средняя уверенность: верные 0.548, ошибочные 0.420
+Средняя длина (слов): верные 37.6, ошибочные 37.0
+
+Точность по уверенности модели:
+                n  accuracy
+confidence                 
+(0.0, 0.5]  185.0     0.746
+(0.5, 0.7]  153.0     0.928
+(0.7, 0.9]   61.0     0.984
+(0.9, 1.0]    1.0     1.000
+
+Точность на самых коротких 25% текстов (<= 31 слов): 0.796; на остальных: 0.872
+
+Топ-слова каждого класса:
+  World      iraq, president, minister, killed, prime minister, country, prime, baghdad, leader, nuclear
+  Sports     football, team, win, coach, night, cup, game, olympic, season, league
+  Business   oil, prices, percent, profit, company, billion, tax, stock, sales, quarter
+  Sci/Tech   microsoft, online, com, space, internet, software, music, scientists, computer, nasa

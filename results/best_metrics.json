@@ -1,0 +1,7 @@
+{
+  "model": "TF-IDF + stop-слова + LR",
+  "cv_macro_f1": 0.853,
+  "test_accuracy": 0.8525,
+  "test_macro_f1": 0.8506,
+  "baseline_test_macro_f1": 0.8398
+}
