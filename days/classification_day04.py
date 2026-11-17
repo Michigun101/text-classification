@@ -14,7 +14,7 @@ from sklearn.naive_bayes import ComplementNB
 from sklearn.pipeline import FeatureUnion, Pipeline
 from sklearn.svm import LinearSVC
 
-from classification_day02 import LABEL_COL, TEXT_COL, preprocess_dataframe
+from days.classification_day02 import LABEL_COL, TEXT_COL, preprocess_dataframe
 
 DATA_PATH = "data/dataset.csv"
 RANDOM_STATE = 42

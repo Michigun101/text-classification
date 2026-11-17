@@ -10,8 +10,8 @@ import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
-from classification_day02 import LABEL_COL, TEXT_COL, clean_text, preprocess_dataframe
-from classification_day04 import RANDOM_STATE, lr, tfidf
+from days.classification_day02 import LABEL_COL, TEXT_COL, clean_text, preprocess_dataframe
+from days.classification_day04 import RANDOM_STATE, lr, tfidf
 
 DATA_PATH = "data/dataset.csv"
 BEST_MODEL_PATH = "models/best_model.joblib"       
